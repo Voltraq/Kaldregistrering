@@ -55,12 +55,18 @@ if check_password():
         
         with col1:
             operator_name = st.selectbox("Operator Name", 
-                ["KAF", "LUJ", "KLN", "DIB", "SBN", "NHA", "IEK", "GIJ", "KSL"])
+                ["KAF", "LUJ", "KLN", "DIB", "SBN", "NHA", "IEK", "GIJ", "KSL"],
+                index=None,
+                placeholder="Vælg operatør..."
+            )
                 
         with col2:
             call_reason = st.selectbox("Reason for Call", 
                 ["Spørgsmål til slutopgørelse", "Fejl med regning", "Tekniske spørgsmål", "Spørgsmål til kontrakt", 
-                 "Klage", "Generelt spørgsmål", "Rykker", "Opsigelse", "Restgæld", "Indfrielse", "Kontrakt ændringer"])
+                 "Klage", "Generelt spørgsmål", "Rykker", "Opsigelse", "Restgæld", "Indfrielse", "Kontrakt ændringer"],
+                index=None,
+                placeholder="Vælg årsag..."
+            )
                 
         notes = st.text_area("Additional Notes")
         submitted = st.form_submit_button("Register Call", type="primary")
